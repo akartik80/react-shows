@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "api": "node ratingsAPI.js"
+    "api": "node ratingsAPI.js",
+    "format": "prettier --write \"js/*.js*\""
   },
   "dependencies": {
     "axios": "0.16.1",
