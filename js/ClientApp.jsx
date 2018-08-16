@@ -1,7 +1,10 @@
+import React from 'react';
+import { render } from 'react-dom'
+
 const ce = React.createElement;
 
-const MyTitle = props => {
-  return ce(
+const MyTitle = props =>
+  ce(
     "div",
     null,
     ce(
@@ -14,10 +17,9 @@ const MyTitle = props => {
       props.title
     )
   );
-};
 
-const myFirstComponent = () => {
-  return ce(
+const myFirstComponent = () =>
+  ce(
     "div",
     {
       id: "my-first-component"
@@ -27,6 +29,5 @@ const myFirstComponent = () => {
     ce(MyTitle, { title: "Rick and Morty", color: "LimeGreen" }),
     ce(MyTitle, { title: "Silicon Valley", color: "Peru" })
   );
-};
 
-ReactDOM.render(ce(myFirstComponent), document.getElementById("app"));
+render(ce(myFirstComponent), document.getElementById("app"));
