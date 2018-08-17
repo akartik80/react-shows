@@ -16,11 +16,13 @@ class Search extends Component {
     return (
       <div className="search">
         <header>
-          <h1>svideo</h1>
+          <h1>{ this.state.searchTerm }</h1>
           <input type="text" placeholder="search" value={ this.state.searchTerm } onChange={ this.handleSearchTermChange } />
         </header>
         <div>
-          { preload.shows.map(show => <ShowCard key={show.imdbID} {...show} />) }
+          { preload.shows
+              .filter(show => `${show.title} ${show.description}`.toLowerCase().match(this.state.searchTerm.toLowerCase()))
+              .map(show => <ShowCard key={show.imdbID} {...show} />) }
         </div>
       </div>
     );
